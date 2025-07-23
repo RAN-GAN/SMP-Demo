@@ -1,0 +1,145 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "course_code": "CS2001",
+      "course_name": "Data Structures and Algorithms",
+      "department": "Computer Science & Engineering",
+      "semester": 4,
+      "year": 2,
+      "credits": 4,
+      "course_type": "Core",
+      "description": "Introduction to fundamental data structures and algorithms, including arrays, linked lists, stacks, queues, trees, graphs, and their applications.",
+      "prerequisites": [
+        "CS1001",
+        "CS1002"
+      ],
+      "instructor": {
+        "id": 1,
+        "name": "Mr Dominic Powlowski",
+        "email": "faculty001@university.edu",
+        "phone": "+91 999800001"
+      },
+      "schedule": {
+        "days": [
+          "Monday",
+          "Wednesday",
+          "Friday"
+        ],
+        "time": "09:00-10:00",
+        "room": "LH-101",
+        "duration": 60
+      },
+      "syllabus": {
+        "unit1": "Introduction to Data Structures",
+        "unit2": "Arrays and Linked Lists",
+        "unit3": "Stacks and Queues",
+        "unit4": "Trees and Binary Search Trees",
+        "unit5": "Graphs and Algorithms"
+      },
+      "assessment": {
+        "mid_term": 30,
+        "end_term": 50,
+        "assignments": 20
+      },
+      "textbooks": [
+        "Introduction to Algorithms by Cormen",
+        "Data Structures and Algorithms by Goodrich"
+      ],
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "course_code": "CS2002",
+      "course_name": "Database Management Systems",
+      "department": "Computer Science & Engineering",
+      "semester": 4,
+      "year": 2,
+      "credits": 4,
+      "course_type": "Core",
+      "description": "Comprehensive study of database design, implementation, and management including SQL, normalization, and transaction processing.",
+      "prerequisites": [
+        "CS1003"
+      ],
+      "instructor": {
+        "id": 2,
+        "name": "Ms Candice Davis",
+        "email": "faculty002@university.edu",
+        "phone": "+91 999800002"
+      },
+      "schedule": {
+        "days": [
+          "Tuesday",
+          "Thursday",
+          "Saturday"
+        ],
+        "time": "11:00-12:00",
+        "room": "LH-102",
+        "duration": 60
+      },
+      "syllabus": {
+        "unit1": "Introduction to Databases",
+        "unit2": "Relational Model and SQL",
+        "unit3": "Database Design and Normalization",
+        "unit4": "Transaction Processing",
+        "unit5": "Advanced Database Topics"
+      },
+      "assessment": {
+        "mid_term": 30,
+        "end_term": 50,
+        "assignments": 20
+      },
+      "textbooks": [
+        "Database System Concepts by Silberschatz",
+        "Fundamentals of Database Systems by Elmasri"
+      ],
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "course_code": "CS2003",
+      "course_name": "Computer Networks",
+      "department": "Computer Science & Engineering",
+      "semester": 5,
+      "year": 3,
+      "credits": 3,
+      "course_type": "Core",
+      "description": "Study of computer network architectures, protocols, and applications including TCP/IP, routing, and network security.",
+      "prerequisites": [
+        "CS2001"
+      ],
+      "instructor": {
+        "id": 3,
+        "name": "Dr Forrest Legros",
+        "email": "faculty003@university.edu",
+        "phone": "+91 999800003"
+      },
+      "schedule": {
+        "days": [
+          "Monday",
+          "Wednesday"
+        ],
+        "time": "14:00-15:30",
+        "room": "LH-103",
+        "duration": 90
+      },
+      "syllabus": {
+        "unit1": "Network Fundamentals",
+        "unit2": "Physical and Data Link Layers",
+        "unit3": "Network Layer and Routing",
+        "unit4": "Transport Layer Protocols",
+        "unit5": "Application Layer and Security"
+      },
+      "assessment": {
+        "mid_term": 30,
+        "end_term": 50,
+        "assignments": 20
+      },
+      "textbooks": [
+        "Computer Networks by Tanenbaum",
+        "Computer Networking by Kurose"
+      ],
+      "status": "active"
+    }
+  ]
+}

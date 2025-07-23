@@ -1,0 +1,258 @@
+{
+  "faculty": [
+    {
+      "id": 1,
+      "name": "Mr Dominic Powlowski",
+      "employee_id": "FAC001",
+      "email": "faculty001@university.edu",
+      "phone": "+91 999800001",
+      "department": "Chemistry",
+      "designation": "Head of Department",
+      "qualification": "PHD in Engineering",
+      "experience": 20,
+      "specialization": [
+        "Machine Learning",
+        "AI"
+      ],
+      "research_id": "https://university.edu/profile/demo1",
+      "courses_teaching": [
+        {
+          "course_code": "23CS937",
+          "course_name": "Machine Learning",
+          "semester": 4,
+          "year": 3
+        }
+      ],
+      "status": "active",
+      "profile_picture": "/faculty/demo1.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Ms Candice Davis",
+      "employee_id": "FAC002",
+      "email": "faculty002@university.edu",
+      "phone": "+91 999800002",
+      "department": "Information Technology",
+      "designation": "Associate Professor",
+      "qualification": "M.Tech in Electronics",
+      "experience": 16,
+      "specialization": [
+        "Machine Learning",
+        "AI"
+      ],
+      "research_id": "https://university.edu/profile/demo2",
+      "courses_teaching": [
+        {
+          "course_code": "23CS672",
+          "course_name": "Web Development",
+          "semester": 2,
+          "year": 2
+        }
+      ],
+      "status": "active",
+      "profile_picture": "/faculty/demo2.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Dr Forrest Legros",
+      "employee_id": "FAC003",
+      "email": "faculty003@university.edu",
+      "phone": "+91 999800003",
+      "department": "Physics",
+      "designation": "Associate Professor",
+      "qualification": "M.Sc. in Mathematics",
+      "experience": 5,
+      "specialization": [
+        "Cybersecurity"
+      ],
+      "research_id": "https://university.edu/profile/demo3",
+      "courses_teaching": [
+        {
+          "course_code": "23CS156",
+          "course_name": "Advanced Programming",
+          "semester": 4,
+          "year": 1
+        }
+      ],
+      "status": "active",
+      "profile_picture": "/faculty/demo3.jpeg"
+    },
+    {
+      "id": 4,
+      "name": "Mrs Tamara Dare",
+      "employee_id": "FAC004",
+      "email": "faculty004@university.edu",
+      "phone": "+91 999800004",
+      "department": "Chemistry",
+      "designation": "Assistant Professor",
+      "qualification": "PHD in Physics",
+      "experience": 15,
+      "specialization": [
+        "Data Science",
+        "Analytics"
+      ],
+      "research_id": "https://university.edu/profile/demo4",
+      "courses_teaching": [
+        {
+          "course_code": "23CS949",
+          "course_name": "Computer Networks",
+          "semester": 4,
+          "year": 2
+        }
+      ],
+      "status": "active",
+      "profile_picture": "/faculty/demo4.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "Ms Juanita Veum",
+      "employee_id": "FAC005",
+      "email": "faculty005@university.edu",
+      "phone": "+91 999800005",
+      "department": "Physics",
+      "designation": "Head of Department",
+      "qualification": "M.Tech in Electronics",
+      "experience": 7,
+      "specialization": [
+        "Software Engineering"
+      ],
+      "research_id": "https://university.edu/profile/demo5",
+      "courses_teaching": [
+        {
+          "course_code": "23CS586",
+          "course_name": "Software Engineering",
+          "semester": 3,
+          "year": 3
+        }
+      ],
+      "status": "active",
+      "profile_picture": "/faculty/demo5.jpeg"
+    },
+    {
+      "id": 6,
+      "name": "Mr Karl Hane",
+      "employee_id": "FAC006",
+      "email": "faculty006@university.edu",
+      "phone": "+91 999800006",
+      "department": "Chemistry",
+      "designation": "Head of Department",
+      "qualification": "M.Sc. in Mathematics",
+      "experience": 12,
+      "specialization": [
+        "Software Engineering"
+      ],
+      "research_id": "https://university.edu/profile/demo6",
+      "courses_teaching": [
+        {
+          "course_code": "23CS763",
+          "course_name": "Database Management",
+          "semester": 8,
+          "year": 2
+        }
+      ],
+      "status": "active",
+      "profile_picture": "/faculty/demo6.jpeg"
+    },
+    {
+      "id": 7,
+      "name": "Dr Marcia Schuppe",
+      "employee_id": "FAC007",
+      "email": "faculty007@university.edu",
+      "phone": "+91 999800007",
+      "department": "Mechanical Engineering",
+      "designation": "Professor",
+      "qualification": "M.E. in Computer Science",
+      "experience": 9,
+      "specialization": [
+        "Web Development"
+      ],
+      "research_id": "https://university.edu/profile/demo7",
+      "courses_teaching": [
+        {
+          "course_code": "23CS171",
+          "course_name": "Computer Networks",
+          "semester": 6,
+          "year": 1
+        }
+      ],
+      "status": "active",
+      "profile_picture": "/faculty/demo7.jpeg"
+    },
+    {
+      "id": 8,
+      "name": "Dr Jorge Pagac",
+      "employee_id": "FAC008",
+      "email": "faculty008@university.edu",
+      "phone": "+91 999800008",
+      "department": "Mechanical Engineering",
+      "designation": "Assistant Professor",
+      "qualification": "PHD in Physics",
+      "experience": 16,
+      "specialization": [
+        "Software Engineering"
+      ],
+      "research_id": "https://university.edu/profile/demo8",
+      "courses_teaching": [
+        {
+          "course_code": "23CS802",
+          "course_name": "Web Development",
+          "semester": 1,
+          "year": 3
+        }
+      ],
+      "status": "active",
+      "profile_picture": "/faculty/demo8.jpeg"
+    },
+    {
+      "id": 9,
+      "name": "Mr Wm Williamson",
+      "employee_id": "FAC009",
+      "email": "faculty009@university.edu",
+      "phone": "+91 999800009",
+      "department": "Mechanical Engineering",
+      "designation": "Head of Department",
+      "qualification": "M.E. in Computer Science",
+      "experience": 6,
+      "specialization": [
+        "Machine Learning",
+        "AI"
+      ],
+      "research_id": "https://university.edu/profile/demo9",
+      "courses_teaching": [
+        {
+          "course_code": "23CS736",
+          "course_name": "Software Engineering",
+          "semester": 2,
+          "year": 2
+        }
+      ],
+      "status": "active",
+      "profile_picture": "/faculty/demo9.jpeg"
+    },
+    {
+      "id": 10,
+      "name": "Dr Gerardo Cartwright",
+      "employee_id": "FAC010",
+      "email": "faculty010@university.edu",
+      "phone": "+91 999800010",
+      "department": "Mechanical Engineering",
+      "designation": "Assistant Professor",
+      "qualification": "M.Tech in Electronics",
+      "experience": 8,
+      "specialization": [
+        "Web Development"
+      ],
+      "research_id": "https://university.edu/profile/demo10",
+      "courses_teaching": [
+        {
+          "course_code": "23CS866",
+          "course_name": "Machine Learning",
+          "semester": 4,
+          "year": 4
+        }
+      ],
+      "status": "active",
+      "profile_picture": "/faculty/demo10.jpeg"
+    }
+  ]
+}

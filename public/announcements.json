@@ -1,0 +1,76 @@
+{
+  "announcements": [
+    {
+      "id": 1,
+      "title": "Mid-Term Examinations Schedule",
+      "content": "Mid-term examinations will be conducted from July 20-25, 2025. Please check your individual timetables for specific dates and timings.",
+      "author": "Academic Office",
+      "date": "2025-07-15T10:00:00Z",
+      "priority": "high",
+      "type": "exam"
+    },
+    {
+      "id": 2,
+      "title": "Library Hours Extended",
+      "content": "The library will remain open until 10:00 PM during exam period to provide students with additional study time.",
+      "author": "Library Department",
+      "date": "2025-07-14T14:30:00Z",
+      "priority": "medium",
+      "type": "general"
+    },
+    {
+      "id": 3,
+      "title": "Assignment Submission Deadline",
+      "content": "All pending assignments for DCN and ASSP subjects must be submitted by July 18, 2025. Late submissions will not be accepted.",
+      "author": "Mr Wm Williamson",
+      "date": "2025-07-13T09:15:00Z",
+      "priority": "high",
+      "type": "deadline"
+    },
+    {
+      "id": 4,
+      "title": "Guest Lecture on AI and Machine Learning",
+      "content": "A special guest lecture on recent advances in AI and ML will be conducted on July 19, 2025 at 2:00 PM in the main auditorium.",
+      "author": "Computer Science Department",
+      "date": "2025-07-12T16:45:00Z",
+      "priority": "medium",
+      "type": "event"
+    },
+    {
+      "id": 5,
+      "title": "Student Council Elections",
+      "content": "Nominations for student council elections are now open. Submit your applications by July 22, 2025.",
+      "author": "Student Affairs Office",
+      "date": "2025-07-11T11:20:00Z",
+      "priority": "low",
+      "type": "announcement"
+    },
+    {
+      "id": 6,
+      "title": "Sports Day Registration",
+      "content": "Annual sports day will be held on July 30, 2025. Register for various events at the sports office.",
+      "author": "Sports Department",
+      "date": "2025-07-10T08:30:00Z",
+      "priority": "medium",
+      "type": "event"
+    },
+    {
+      "id": 7,
+      "title": "Placement Drive Notification",
+      "content": "Several companies will be visiting for campus placements next month. Eligible students should register with the placement cell.",
+      "author": "Placement Office",
+      "date": "2025-07-09T13:00:00Z",
+      "priority": "high",
+      "type": "placement"
+    },
+    {
+      "id": 8,
+      "title": "Workshop on Web Development",
+      "content": "A hands-on workshop on modern web development technologies will be conducted over the weekend.",
+      "author": "Mrs Tamara Dare",
+      "date": "2025-07-08T15:15:00Z",
+      "priority": "medium",
+      "type": "workshop"
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+/* Calendar Navigation Styles */
+.rc-flex {
+  display: flex;
+}
+
+.rc-justify-end {
+  justify-content: flex-end;
+}
+
+.rc-mb-4 {
+  margin-bottom: 1rem;
+}
+
+.rc-cursor-pointer {
+  cursor: pointer;
+  background: #3f72af;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.rc-cursor-pointer:hover {
+  background: #112d4e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(63, 114, 175, 0.3);
+}
+
+.rc-cursor-pointer:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(63, 114, 175, 0.3);
+}
+
+.rc-ml-4 {
+  margin-left: 1rem;
+}
+
+.rc-mr-4 {
+  margin-right: 1rem;
+}
+
+.rc-w-32 {
+  width: 8rem;
+}
+
+.rc-text-center {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.125rem;
+  color: #112d4e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Calendar container to remove default library padding */
+.calendar-container {
+  margin: 0;
+  padding: 0;
+}
+
+.calendar-container > * {
+  margin: 0;
+  padding: 0;
+}
+
+/* Override any default MonthlyCalendar styles */
+.calendar-container .rc-calendar,
+.calendar-container .rc-calendar-wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+/* Alternative centered layout */
+.calendar-nav-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  padding: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.calendar-nav-centered button {
+  background: #3f72af;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 80px;
+}
+
+.calendar-nav-centered button:hover {
+  background: #112d4e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(63, 114, 175, 0.3);
+}
+
+.calendar-nav-centered .month-title {
+  font-weight: bold;
+  font-size: 1.125rem;
+  color: #112d4e;
+  min-width: 120px;
+  text-align: center;
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .rc-cursor-pointer {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.7rem;
+    min-height: 28px;
+    touch-action: manipulation;
+  }
+
+  .rc-w-32 {
+    width: 4rem;
+  }
+
+  .rc-text-center {
+    font-size: 0.8rem;
+  }
+
+  .calendar-nav-centered {
+    gap: 0.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .calendar-nav-centered button {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.7rem;
+    min-width: 40px;
+    min-height: 28px;
+    touch-action: manipulation;
+  }
+
+  .calendar-nav-centered .month-title {
+    font-size: 0.8rem;
+    min-width: 70px;
+  }
+}
+
+/* Extra small mobile screens */
+@media (max-width: 480px) {
+  .calendar-nav-centered {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+
+  .calendar-nav-centered button {
+    width: 100%;
+    max-width: 100px;
+    margin: 0 auto;
+  }
+
+  .calendar-nav-centered .month-title {
+    order: -1;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  /* Make calendar horizontally scrollable on very small screens */
+  .calendar-wrapper {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+
+  .calendar-grid {
+    min-width: 300px;
+  }
+}
+
+/* Touch optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .calendar-nav-centered button {
+    min-height: 36px;
+    min-width: 50px;
+    touch-action: manipulation;
+  }
+
+  .rc-cursor-pointer {
+    min-height: 36px;
+    touch-action: manipulation;
+  }
+}

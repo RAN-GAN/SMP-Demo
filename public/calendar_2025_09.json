@@ -1,0 +1,246 @@
+{
+  "year": 2025,
+  "month": 9,
+  "days": [
+    {
+      "date": 1,
+      "day_name": "Monday",
+      "type": "Working Day",
+      "day_order": 2,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 2,
+      "day_name": "Tuesday",
+      "type": "Working Day",
+      "day_order": 3,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 3,
+      "day_name": "Wednesday",
+      "type": "Working Day",
+      "day_order": 4,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 4,
+      "day_name": "Thursday",
+      "type": "holiday",
+      "day_order": null,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 5,
+      "day_name": "Friday",
+      "type": "holiday",
+      "day_order": null,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 6,
+      "day_name": "Saturday",
+      "type": "holiday",
+      "day_order": null,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 7,
+      "day_name": "Sunday",
+      "type": "holiday",
+      "day_order": null,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 8,
+      "day_name": "Monday",
+      "type": "Working Day",
+      "day_order": 5,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 9,
+      "day_name": "Tuesday",
+      "type": "Working Day",
+      "day_order": 1,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 10,
+      "day_name": "Wednesday",
+      "type": "Working Day",
+      "day_order": 2,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 11,
+      "day_name": "Thursday",
+      "type": "Working Day",
+      "day_order": 3,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 12,
+      "day_name": "Friday",
+      "type": "Working Day",
+      "day_order": 4,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 13,
+      "day_name": "Saturday",
+      "type": "Working Day",
+      "day_order": 5,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 14,
+      "day_name": "Sunday",
+      "type": "holiday",
+      "day_order": null,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 15,
+      "day_name": "Monday",
+      "type": "Working Day",
+      "day_order": 1,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 16,
+      "day_name": "Tuesday",
+      "type": "Working Day",
+      "day_order": 2,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 17,
+      "day_name": "Wednesday",
+      "type": "Working Day",
+      "day_order": 3,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 18,
+      "day_name": "Thursday",
+      "type": "Working Day",
+      "day_order": 4,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 19,
+      "day_name": "Friday",
+      "type": "Working Day",
+      "day_order": 5,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 20,
+      "day_name": "Saturday",
+      "type": "holiday",
+      "day_order": null,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 21,
+      "day_name": "Sunday",
+      "type": "holiday",
+      "day_order": null,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 22,
+      "day_name": "Monday",
+      "type": "Working Day",
+      "day_order": 1,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 23,
+      "day_name": "Tuesday",
+      "type": "Working Day",
+      "day_order": 2,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 24,
+      "day_name": "Wednesday",
+      "type": "Working Day",
+      "day_order": 3,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 25,
+      "day_name": "Thursday",
+      "type": "Working Day",
+      "day_order": 4,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 26,
+      "day_name": "Friday",
+      "type": "Working Day",
+      "day_order": 5,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 27,
+      "day_name": "Saturday",
+      "type": "Working Day",
+      "day_order": 1,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 28,
+      "day_name": "Sunday",
+      "type": "holiday",
+      "day_order": null,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 29,
+      "day_name": "Monday",
+      "type": "Working Day",
+      "day_order": 2,
+      "events": [],
+      "deadlines": []
+    },
+    {
+      "date": 30,
+      "day_name": "Tuesday",
+      "type": "Working Day",
+      "day_order": 3,
+      "events": [],
+      "deadlines": []
+    }
+  ]
+}
