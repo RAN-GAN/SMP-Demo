@@ -1,0 +1,566 @@
+{
+  "periods": [
+    {
+      "number": 1,
+      "startTime": "08:45",
+      "endTime": "09:45"
+    },
+    {
+      "number": 2,
+      "startTime": "09:45",
+      "endTime": "10:45"
+    },
+    {
+      "number": "Break",
+      "startTime": "10:45",
+      "endTime": "11:15"
+    },
+    {
+      "number": 3,
+      "startTime": "11:15",
+      "endTime": "12:15"
+    },
+    {
+      "number": 4,
+      "startTime": "12:15",
+      "endTime": "13:15"
+    },
+    {
+      "number": "Lunch",
+      "startTime": "13:15",
+      "endTime": "14:15"
+    },
+    {
+      "number": 5,
+      "startTime": "14:15",
+      "endTime": "15:15"
+    },
+    {
+      "number": 6,
+      "startTime": "15:15",
+      "endTime": "16:15"
+    }
+  ],
+  "timetables": {
+    "faculty001@university.edu": {
+      "Day1": {
+        "subjects": [
+          "ASSP",
+          "Devops",
+          "ASSP",
+          "Devops",
+          "",
+          "DCN"
+        ]
+      },
+      "Day2": {
+        "subjects": [
+          "Devops",
+          "Devops",
+          "DCN",
+          "ML",
+          "ASSP",
+          "Devops"
+        ]
+      },
+      "Day3": {
+        "subjects": [
+          "ASSP",
+          "DCN",
+          "SE",
+          "ML",
+          "ML",
+          "ASSP"
+        ]
+      },
+      "Day4": {
+        "subjects": [
+          "Devops",
+          "",
+          "ML",
+          "DCN",
+          "",
+          ""
+        ]
+      },
+      "Day5": {
+        "subjects": [
+          "ASSP",
+          "DCN",
+          "DCN",
+          "ML",
+          "ML",
+          "Devops"
+        ]
+      }
+    },
+    "faculty002@university.edu": {
+      "Day1": {
+        "subjects": [
+          "DCN",
+          "DCN",
+          "ASSP",
+          "",
+          "Devops",
+          "Devops"
+        ]
+      },
+      "Day2": {
+        "subjects": [
+          "SE",
+          "Devops",
+          "ASSP",
+          "SE",
+          "",
+          "SE"
+        ]
+      },
+      "Day3": {
+        "subjects": [
+          "ML",
+          "ASSP",
+          "ML",
+          "ML",
+          "",
+          "SE"
+        ]
+      },
+      "Day4": {
+        "subjects": [
+          "ML",
+          "ML",
+          "",
+          "",
+          "",
+          "ASSP"
+        ]
+      },
+      "Day5": {
+        "subjects": [
+          "DCN",
+          "ASSP",
+          "ML",
+          "Devops",
+          "ML",
+          "SE"
+        ]
+      }
+    },
+    "faculty003@university.edu": {
+      "Day1": {
+        "subjects": [
+          "DCN",
+          "SE",
+          "ML",
+          "Devops",
+          "Devops",
+          "DCN"
+        ]
+      },
+      "Day2": {
+        "subjects": [
+          "ML",
+          "Devops",
+          "ML",
+          "ASSP",
+          "",
+          "ML"
+        ]
+      },
+      "Day3": {
+        "subjects": [
+          "ASSP",
+          "",
+          "SE",
+          "DCN",
+          "ML",
+          "ML"
+        ]
+      },
+      "Day4": {
+        "subjects": [
+          "",
+          "DCN",
+          "",
+          "ML",
+          "DCN",
+          "DCN"
+        ]
+      },
+      "Day5": {
+        "subjects": [
+          "SE",
+          "Devops",
+          "Devops",
+          "Devops",
+          "",
+          "DCN"
+        ]
+      }
+    },
+    "faculty004@university.edu": {
+      "Day1": {
+        "subjects": [
+          "",
+          "Devops",
+          "ASSP",
+          "",
+          "ML",
+          "ASSP"
+        ]
+      },
+      "Day2": {
+        "subjects": [
+          "",
+          "DCN",
+          "DCN",
+          "DCN",
+          "SE",
+          "DCN"
+        ]
+      },
+      "Day3": {
+        "subjects": [
+          "Devops",
+          "DCN",
+          "",
+          "ASSP",
+          "SE",
+          "ASSP"
+        ]
+      },
+      "Day4": {
+        "subjects": [
+          "ASSP",
+          "Devops",
+          "DCN",
+          "SE",
+          "",
+          "Devops"
+        ]
+      },
+      "Day5": {
+        "subjects": [
+          "",
+          "",
+          "",
+          "DCN",
+          "ASSP",
+          "SE"
+        ]
+      }
+    },
+    "faculty005@university.edu": {
+      "Day1": {
+        "subjects": [
+          "SE",
+          "DCN",
+          "Devops",
+          "ML",
+          "",
+          "Devops"
+        ]
+      },
+      "Day2": {
+        "subjects": [
+          "ASSP",
+          "Devops",
+          "ML",
+          "ML",
+          "SE",
+          "ML"
+        ]
+      },
+      "Day3": {
+        "subjects": [
+          "SE",
+          "SE",
+          "SE",
+          "",
+          "Devops",
+          "SE"
+        ]
+      },
+      "Day4": {
+        "subjects": [
+          "ASSP",
+          "Devops",
+          "",
+          "ML",
+          "",
+          ""
+        ]
+      },
+      "Day5": {
+        "subjects": [
+          "SE",
+          "ASSP",
+          "DCN",
+          "",
+          "DCN",
+          "ML"
+        ]
+      }
+    },
+    "faculty006@university.edu": {
+      "Day1": {
+        "subjects": [
+          "",
+          "ASSP",
+          "DCN",
+          "Devops",
+          "DCN",
+          "Devops"
+        ]
+      },
+      "Day2": {
+        "subjects": [
+          "Devops",
+          "DCN",
+          "ML",
+          "ASSP",
+          "SE",
+          "Devops"
+        ]
+      },
+      "Day3": {
+        "subjects": [
+          "DCN",
+          "Devops",
+          "DCN",
+          "",
+          "Devops",
+          ""
+        ]
+      },
+      "Day4": {
+        "subjects": [
+          "ASSP",
+          "DCN",
+          "",
+          "ASSP",
+          "ML",
+          "SE"
+        ]
+      },
+      "Day5": {
+        "subjects": [
+          "DCN",
+          "",
+          "",
+          "",
+          "ML",
+          "Devops"
+        ]
+      }
+    },
+    "faculty007@university.edu": {
+      "Day1": {
+        "subjects": [
+          "ML",
+          "DCN",
+          "SE",
+          "SE",
+          "",
+          "Devops"
+        ]
+      },
+      "Day2": {
+        "subjects": [
+          "DCN",
+          "ML",
+          "ML",
+          "ASSP",
+          "SE",
+          "DCN"
+        ]
+      },
+      "Day3": {
+        "subjects": [
+          "Devops",
+          "ML",
+          "DCN",
+          "",
+          "",
+          "Devops"
+        ]
+      },
+      "Day4": {
+        "subjects": [
+          "Devops",
+          "SE",
+          "SE",
+          "DCN",
+          "Devops",
+          "ML"
+        ]
+      },
+      "Day5": {
+        "subjects": [
+          "ASSP",
+          "",
+          "SE",
+          "DCN",
+          "ML",
+          "SE"
+        ]
+      }
+    },
+    "faculty008@university.edu": {
+      "Day1": {
+        "subjects": [
+          "DCN",
+          "ML",
+          "ASSP",
+          "Devops",
+          "SE",
+          "ASSP"
+        ]
+      },
+      "Day2": {
+        "subjects": [
+          "ASSP",
+          "",
+          "SE",
+          "",
+          "SE",
+          "ML"
+        ]
+      },
+      "Day3": {
+        "subjects": [
+          "ML",
+          "",
+          "SE",
+          "",
+          "Devops",
+          "ML"
+        ]
+      },
+      "Day4": {
+        "subjects": [
+          "Devops",
+          "DCN",
+          "ASSP",
+          "DCN",
+          "DCN",
+          "ASSP"
+        ]
+      },
+      "Day5": {
+        "subjects": [
+          "ML",
+          "DCN",
+          "ASSP",
+          "",
+          "",
+          "ASSP"
+        ]
+      }
+    },
+    "faculty009@university.edu": {
+      "Day1": {
+        "subjects": [
+          "SE",
+          "ML",
+          "DCN",
+          "SE",
+          "DCN",
+          "ASSP"
+        ]
+      },
+      "Day2": {
+        "subjects": [
+          "ASSP",
+          "",
+          "ASSP",
+          "",
+          "SE",
+          "SE"
+        ]
+      },
+      "Day3": {
+        "subjects": [
+          "DCN",
+          "ASSP",
+          "DCN",
+          "",
+          "ML",
+          "Devops"
+        ]
+      },
+      "Day4": {
+        "subjects": [
+          "ML",
+          "ASSP",
+          "DCN",
+          "ML",
+          "Devops",
+          "ML"
+        ]
+      },
+      "Day5": {
+        "subjects": [
+          "ML",
+          "",
+          "",
+          "ML",
+          "",
+          "ASSP"
+        ]
+      }
+    },
+    "faculty010@university.edu": {
+      "Day1": {
+        "subjects": [
+          "ASSP",
+          "SE",
+          "ASSP",
+          "DCN",
+          "SE",
+          "ASSP"
+        ]
+      },
+      "Day2": {
+        "subjects": [
+          "ML",
+          "Devops",
+          "DCN",
+          "DCN",
+          "ASSP",
+          "DCN"
+        ]
+      },
+      "Day3": {
+        "subjects": [
+          "DCN",
+          "",
+          "",
+          "Devops",
+          "ML",
+          "ML"
+        ]
+      },
+      "Day4": {
+        "subjects": [
+          "SE",
+          "",
+          "DCN",
+          "ML",
+          "Devops",
+          "SE"
+        ]
+      },
+      "Day5": {
+        "subjects": [
+          "ASSP",
+          "",
+          "Devops",
+          "",
+          "SE",
+          "DCN"
+        ]
+      }
+    }
+  }
+}
