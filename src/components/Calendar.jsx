@@ -51,8 +51,10 @@ export const MyMonthlyCalendar = () => {
       const year = date.getFullYear();
       const month = date.getMonth() + 1;
       try {
+        const basePath =
+          import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
         const response = await fetch(
-          `/calendar_${year}_${String(month).padStart(2, "0")}.json`
+          `${basePath}/calendar_${year}_${String(month).padStart(2, "0")}.json`
         );
         if (!response.ok) throw new Error(`Calendar data not found`);
         const data = await response.json();
@@ -147,16 +149,14 @@ export const MyMonthlyCalendar = () => {
 
       return (
         <div
-  key={i}
-  className={`h-20 sm:h-24 md:h-28 lg:h-32 border border-gray-200 p-1 flex flex-col transform transition-transform duration-200 ${
-    !isCurrentMonth
-      ? "bg-[#DBE2EF] text-[#3F72AF]"
-      : "bg-[#F9F7F7] hover:bg-[#DBE2EF] hover:scale-[1.03] hover:border-2 hover:border-[#3F72AF]"
-  } cursor-pointer`}
-  onClick={() => isCurrentMonth && handleDateClick(cellDate, events)}
->
-
-
+          key={i}
+          className={`h-20 sm:h-24 md:h-28 lg:h-32 border border-gray-200 p-1 flex flex-col transform transition-transform duration-200 ${
+            !isCurrentMonth
+              ? "bg-[#DBE2EF] text-[#3F72AF]"
+              : "bg-[#F9F7F7] hover:bg-[#DBE2EF] hover:scale-[1.03] hover:border-2 hover:border-[#3F72AF]"
+          } cursor-pointer`}
+          onClick={() => isCurrentMonth && handleDateClick(cellDate, events)}
+        >
           <div className="text-[10px] font-bold text-gray-700">
             {cellDate.getDate()}
           </div>
@@ -304,10 +304,10 @@ export const MyMonthlyCalendar = () => {
             onClick={() => handleMonthChange(getPrevMonth(currentMonth))}
             disabled={!canNavigatePrev()}
             className={`px-4 py-2 rounded font-semibold transition-all duration-200 transform ${
-  canNavigatePrev()
-    ? "bg-[#3F72AF] text-white hover:scale-105 hover:shadow-lg"
-    : "bg-gray-200 text-gray-400 cursor-not-allowed"
-}`}
+              canNavigatePrev()
+                ? "bg-[#3F72AF] text-white hover:scale-105 hover:shadow-lg"
+                : "bg-gray-200 text-gray-400 cursor-not-allowed"
+            }`}
           >
             Prev
           </button>
@@ -319,11 +319,10 @@ export const MyMonthlyCalendar = () => {
             onClick={() => handleMonthChange(getNextMonth(currentMonth))}
             disabled={!canNavigateNext()}
             className={`px-4 py-2 rounded font-semibold transition-all duration-200 transform ${
-  canNavigateNext()
-    ? "bg-[#3F72AF] text-white hover:scale-105 hover:shadow-lg"
-    : "bg-gray-200 text-gray-400 cursor-not-allowed"
-}`}
-
+              canNavigateNext()
+                ? "bg-[#3F72AF] text-white hover:scale-105 hover:shadow-lg"
+                : "bg-gray-200 text-gray-400 cursor-not-allowed"
+            }`}
           >
             Next
           </button>

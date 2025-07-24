@@ -8,7 +8,9 @@ const ViewAttendance = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/students_data.json")
+    const basePath =
+      import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
+    fetch(`${basePath}/students_data.json`)
       .then((response) => response.json())
       .then((data) => {
         const studentList = data.students || [];

@@ -7,7 +7,9 @@ const InternalMarks = () => {
 
   useEffect(() => {
     // Fetch student data from an API or a local file
-    fetch("/students_data.json")
+    const basePath =
+      import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
+    fetch(`${basePath}/students_data.json`)
       .then((response) => response.json())
       .then((data) => {
         // Use data.students array

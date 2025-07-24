@@ -33,7 +33,9 @@ function GeneralInfo() {
     const fetchTimetable = async () => {
       setLoading(true);
       try {
-        const res = await fetch("/timetable.json");
+        const basePath =
+          import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
+        const res = await fetch(`${basePath}/timetable.json`);
         if (!res.ok) throw new Error("Failed to load timetable");
         const data = await res.json();
 
@@ -97,8 +99,10 @@ function GeneralInfo() {
         const today = new Date();
         const year = today.getFullYear();
         const month = today.getMonth() + 1;
+        const basePath =
+          import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
         const res = await fetch(
-          `/calendar_${year}_${String(month).padStart(2, "0")}.json`
+          `${basePath}/calendar_${year}_${String(month).padStart(2, "0")}.json`
         );
         if (!res.ok) {
           const dayOfWeek = today.getDay();
@@ -247,7 +251,7 @@ function GeneralInfo() {
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link
             to="/edit-timetable"
-            className="px-4 py-2 block bg-[#3F72AF] text-white rounded-lg text-sm font-semibold hover:bg-[#112D4E] transition-colors shadow-sm hover:shadow-md"
+            className="px-4 py-2 bg-[#3F72AF] text-white rounded-lg text-sm font-semibold hover:bg-[#112D4E] transition-colors shadow-sm hover:shadow-md"
           >
             Edit Timetable
           </Link>
@@ -255,7 +259,7 @@ function GeneralInfo() {
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link
             to="/news"
-            className="px-4 py-2 block bg-[#3F72AF] text-white rounded-lg text-sm font-semibold hover:bg-[#112D4E] transition-colors shadow-sm hover:shadow-md md:hidden"
+            className="px-4 py-2 bg-[#3F72AF] text-white rounded-lg text-sm font-semibold hover:bg-[#112D4E] transition-colors shadow-sm hover:shadow-md md:hidden"
           >
             News
           </Link>
@@ -263,7 +267,7 @@ function GeneralInfo() {
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link
             to="/tools"
-            className="px-4 py-2 block bg-[#3F72AF] text-white rounded-lg text-sm font-semibold hover:bg-[#112D4E] transition-colors shadow-sm hover:shadow-md md:hidden"
+            className="px-4 py-2  bg-[#3F72AF] text-white rounded-lg text-sm font-semibold hover:bg-[#112D4E] transition-colors shadow-sm hover:shadow-md md:hidden"
           >
             Tools
           </Link>

@@ -1,19 +1,78 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import DotGrid from "./Effects/DotGrid";
 
 function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { user } = useAuth();
 
-  const user = {
-    name: "Dr. Sarah Johnson",
-    email: "sarah.johnson@university.edu",
-    department: "Computer Science",
-    designation: "Associate Professor",
+  const clickBuffer = useRef(0);
+  const [displayCount, setDisplayCount] = useState(0);
+
+  const flushClicks = async () => {
+    if (clickBuffer.current > 0) {
+      try {
+        const backendUrl =
+          import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+        await fetch(`${backendUrl}/api/header-click`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            clicks: clickBuffer.current,
+            element: "main-header",
+          }),
+        });
+        clickBuffer.current = 0;
+      } catch (err) {
+        console.error("Failed to sync clicks");
+        // Optionally retry later
+      }
+    }
+  };
+
+  const handleClick = () => {
+    clickBuffer.current += 1;
+    setDisplayCount((prev) => prev + 1);
+  };
+
+  // Auto-flush every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      flushClicks();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Flush on tab close
+  useEffect(() => {
+    const flushBeforeUnload = (e) => {
+      const backendUrl =
+        import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+      navigator.sendBeacon(
+        `${backendUrl}/api/header-click`,
+        JSON.stringify({
+          clicks: clickBuffer.current,
+          element: "main-header",
+        })
+      );
+    };
+
+    window.addEventListener("beforeunload", flushBeforeUnload);
+    return () => window.removeEventListener("beforeunload", flushBeforeUnload);
+  }, []);
+
+  // Fallback user data if not logged in or loading
+  const displayUser = user || {
+    name: "Faculty Member",
+    email: "faculty@university.edu",
+    department: "Demo Department",
+    designation: "Faculty",
   };
 
   return (
-    <header className="relative z-50 bg-[#10375c]">
+    <header onClick={handleClick} className="relative z-50 bg-[#10375c]">
       <div className="absolute top-0 left-0 w-full h-full z-0 opacity-20 pointer-events-none overflow-hidden">
         <DotGrid
           dotSize={3}
@@ -71,10 +130,10 @@ function Header() {
                   </div>
                   <div className="hidden sm:block text-left">
                     <div className="font-semibold text-sm leading-tight">
-                      {user.name}
+                      {displayUser.name}
                     </div>
                     <div className="text-xs text-[#DBE2EF] leading-tight">
-                      {user.designation}
+                      {displayUser.designation}
                     </div>
                   </div>
                   <i
@@ -97,12 +156,15 @@ function Header() {
                     <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-2xl border border-gray-200 py-2 z-[9999]">
                       <div className="px-4 py-3 border-b border-gray-100">
                         <p className="text-sm font-medium text-gray-900">
-                          {user.name}
+                          {displayUser.name}
                         </p>
                         <p className="text-xs text-gray-500 truncate">
-                          {user.email}
+                          {displayUser.email}
                         </p>
                         <p className="text-xs text-blue-600 mt-1">Demo Mode</p>
+                        <p className="text-xs text-green-600 mt-1">
+                          Session Clicks: {displayCount}
+                        </p>
                       </div>
 
                       <Link

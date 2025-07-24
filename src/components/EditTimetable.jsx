@@ -23,7 +23,9 @@ function EditTimetable() {
 
   const fetchCourseData = async () => {
     try {
-      const response = await fetch("/courses.json");
+      const basePath =
+        import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
+      const response = await fetch(`${basePath}/courses.json`);
       const data = await response.json();
 
       // Convert course data to subjects format for timetable
@@ -32,6 +34,7 @@ function EditTimetable() {
         data.courses.forEach((course) => {
           subjectsFromCourses[course.course_code] = {
             name: course.course_name,
+            fullName: course.course_name,
             code: course.course_code,
             instructor: course.instructor?.name || "Faculty",
             credits: course.credits || 3,
@@ -43,18 +46,46 @@ function EditTimetable() {
       const commonSubjects = {
         ASSP: {
           name: "Advanced Server Side Programming",
+          fullName: "Advanced Server Side Programming",
           code: "ASSP",
+          instructor: "Faculty",
           credits: 4,
         },
-        Devops: { name: "DevOps", code: "Devops", credits: 3 },
+        Devops: {
+          name: "DevOps",
+          fullName: "DevOps",
+          code: "Devops",
+          instructor: "Faculty",
+          credits: 3,
+        },
         DCN: {
           name: "Data Communications and Network",
+          fullName: "Data Communications and Network",
           code: "DCN",
+          instructor: "Faculty",
           credits: 4,
         },
-        ML: { name: "Machine Learning", code: "ML", credits: 4 },
-        SE: { name: "Software Engineering", code: "SE", credits: 3 },
-        "": { name: "Free Period", code: "", credits: 0 },
+        ML: {
+          name: "Machine Learning",
+          fullName: "Machine Learning",
+          code: "ML",
+          instructor: "Faculty",
+          credits: 4,
+        },
+        SE: {
+          name: "Software Engineering",
+          fullName: "Software Engineering",
+          code: "SE",
+          instructor: "Faculty",
+          credits: 3,
+        },
+        "": {
+          name: "Free Period",
+          fullName: "Free Period",
+          code: "",
+          instructor: "",
+          credits: 0,
+        },
       };
 
       setSubjects({ ...subjectsFromCourses, ...commonSubjects });
@@ -64,25 +95,55 @@ function EditTimetable() {
       setSubjects({
         ASSP: {
           name: "Advanced Server Side Programming",
+          fullName: "Advanced Server Side Programming",
           code: "ASSP",
+          instructor: "Faculty",
           credits: 4,
         },
-        Devops: { name: "DevOps", code: "Devops", credits: 3 },
+        Devops: {
+          name: "DevOps",
+          fullName: "DevOps",
+          code: "Devops",
+          instructor: "Faculty",
+          credits: 3,
+        },
         DCN: {
           name: "Data Communications and Network",
+          fullName: "Data Communications and Network",
           code: "DCN",
+          instructor: "Faculty",
           credits: 4,
         },
-        ML: { name: "Machine Learning", code: "ML", credits: 4 },
-        SE: { name: "Software Engineering", code: "SE", credits: 3 },
-        "": { name: "Free Period", code: "", credits: 0 },
+        ML: {
+          name: "Machine Learning",
+          fullName: "Machine Learning",
+          code: "ML",
+          instructor: "Faculty",
+          credits: 4,
+        },
+        SE: {
+          name: "Software Engineering",
+          fullName: "Software Engineering",
+          code: "SE",
+          instructor: "Faculty",
+          credits: 3,
+        },
+        "": {
+          name: "Free Period",
+          fullName: "Free Period",
+          code: "",
+          instructor: "",
+          credits: 0,
+        },
       });
     }
   };
 
   const fetchTimetableData = async () => {
     try {
-      const response = await fetch("/timetable.json");
+      const basePath =
+        import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL;
+      const response = await fetch(`${basePath}/timetable.json`);
       const data = await response.json();
       setTimetableData(data);
 
@@ -143,43 +204,14 @@ function EditTimetable() {
     setSaving(true);
     setSaveMessage("");
     try {
-      let updatedData;
+      // For demo purposes, just simulate a successful save
+      // In production, this would save to the backend
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate API delay
 
-      // Check if this is the new faculty-specific structure
-      if (timetableData.timetables && user?.email) {
-        // Update faculty-specific timetable
-        updatedData = {
-          ...timetableData,
-          timetables: {
-            ...timetableData.timetables,
-            [user.email]: timetable,
-          },
-          periods: periods,
-        };
-      } else {
-        // Legacy single timetable structure
-        updatedData = {
-          ...timetableData,
-          timetable: timetable,
-          subjects: subjects,
-          periods: periods,
-        };
-      }
-
-      const response = await fetch(`${backendUrl}/api/timetable`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedData),
-      });
-
-      if (response.ok) {
-        setSaveMessage("✅ Timetable saved successfully!");
-        setTimeout(() => setSaveMessage(""), 3000);
-      } else {
-        throw new Error("Failed to save timetable");
-      }
+      setSaveMessage(
+        "✅ Timetable saved successfully! (Demo mode - changes not persisted)"
+      );
+      setTimeout(() => setSaveMessage(""), 5000);
     } catch (error) {
       // console.error("Error saving timetable:", error);
       setSaveMessage("❌ Failed to save timetable. Please try again.");
@@ -270,12 +302,12 @@ function EditTimetable() {
 
           {/* Save Button */}
           <button
-            // onClick={saveToServer}
-            // disabled={saving}
-            className={` hover:cursor-not-allowed px-6 py-2 rounded-lg font-semibold transition-all duration-200 ${
+            onClick={saveToServer}
+            disabled={saving}
+            className={`px-6 py-2 rounded-lg font-semibold transition-all duration-200 ${
               saving
                 ? "bg-gray-400 text-white cursor-not-allowed"
-                : "bg-[#3F72AF] hover:bg-[#112D4E] text-white shadow-sm hover:shadow-md"
+                : "bg-[#3F72AF] hover:bg-[#112D4E] text-white shadow-sm hover:shadow-md cursor-pointer"
             }`}
           >
             {saving ? (
@@ -411,14 +443,14 @@ function EditTimetable() {
                           {editIndex === idx ? (
                             <div className="flex gap-2">
                               <button
-                                // onClick={() => handleEditSave(idx)}
-                                className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors shadow-sm hover:cursor-not-allowed"
+                                onClick={() => handleEditSave(idx)}
+                                className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-semibold hover:bg-green-700 transition-colors shadow-sm"
                               >
                                 Save
                               </button>
                               <button
                                 onClick={handleEditCancel}
-                                className="px-4 py-2 bg-gray-500 text-white rounded-lg text-sm font-semibold hover:bg-gray-600 transition-colors shadow-sm hover:cursor-not-allowed"
+                                className="px-4 py-2 bg-gray-500 text-white rounded-lg text-sm font-semibold hover:bg-gray-600 transition-colors shadow-sm"
                               >
                                 Cancel
                               </button>
@@ -519,15 +551,15 @@ function EditTimetable() {
                   {editIndex === idx ? (
                     <>
                       <button
-                        // onClick={() => handleEditSave(idx)}
-                        className="flex-1 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors shadow-sm hover:cursor-not-allowed"
+                        onClick={() => handleEditSave(idx)}
+                        className="flex-1 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors shadow-sm"
                       >
                         <i className="fas fa-check mr-2"></i>
                         Save Changes
                       </button>
                       <button
-                        // onClick={handleEditCancel}
-                        className="flex-1 py-3 bg-gray-500 text-white rounded-lg font-semibold hover:bg-gray-600 transition-colors shadow-sm hover:cursor-not-allowed"
+                        onClick={handleEditCancel}
+                        className="flex-1 py-3 bg-gray-500 text-white rounded-lg font-semibold hover:bg-gray-600 transition-colors shadow-sm"
                       >
                         <i className="fas fa-times mr-2"></i>
                         Cancel

@@ -13,7 +13,7 @@ import ViewAttendance from "./components/ViewAttendance";
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen bg-[#DBE2EF]">
         <Header />
         <main className="pb-16 md:pb-0">

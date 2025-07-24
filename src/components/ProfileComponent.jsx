@@ -8,9 +8,12 @@ function ProfileComponent() {
   const [facultyData, setFacultyData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [imageError, setImageError] = useState(false);
+  const [clickStats, setClickStats] = useState(null);
+  const [clickLoading, setClickLoading] = useState(true);
 
   useEffect(() => {
     fetchFacultyData();
+    fetchClickStats();
   }, []);
 
   const fetchFacultyData = async () => {
@@ -24,6 +27,26 @@ function ProfileComponent() {
     }
   };
 
+  const fetchClickStats = async () => {
+    try {
+      setClickLoading(true);
+      const backendUrl =
+        import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+      const response = await fetch(`${backendUrl}/api/click-stats`);
+      const data = await response.json();
+
+      if (data.success) {
+        setClickStats(data);
+      } else {
+        console.error("Failed to fetch click stats:", data.error);
+      }
+    } catch (err) {
+      console.error("Error fetching click stats:", err);
+    } finally {
+      setClickLoading(false);
+    }
+  };
+
   const handleLogout = async () => {
     try {
       await logout();
@@ -33,6 +56,11 @@ function ProfileComponent() {
       alert("Logout failed. Please try again.");
     }
   };
+
+  // Get header click stats for easier access
+  const headerClickStats = clickStats?.stats?.find(
+    (stat) => stat.element === "main-header"
+  );
 
   if (loading) {
     return (
@@ -81,13 +109,15 @@ function ProfileComponent() {
           {/* Basic Info */}
           <div className="flex-1">
             <h2 className="text-3xl font-bold text-[#112D4E] mb-2">
-              {facultyData?.name || "Faculty Member"}
+              {facultyData?.name || user?.name || "Faculty Member"}
             </h2>
             <p className="text-lg text-[#3F72AF] font-semibold mb-1">
-              {facultyData?.designation || "Faculty Member"}
+              {facultyData?.designation ||
+                user?.designation ||
+                "Faculty Member"}
             </p>
             <p className="text-[#3F72AF] mb-2">
-              {facultyData?.department || user.department}
+              {facultyData?.department || user?.department || "Department"}
             </p>
             <div className="flex items-center gap-2">
               <span
@@ -102,7 +132,7 @@ function ProfileComponent() {
                   : "Inactive"}
               </span>
               <span className="px-3 py-1 bg-[#DBE2EF] text-[#112D4E] rounded-full text-sm font-semibold">
-                ID: {facultyData?.employee_id || user.employee_id}
+                ID: {facultyData?.employee_id || user?.employee_id || "N/A"}
               </span>
             </div>
           </div>
@@ -128,7 +158,7 @@ function ProfileComponent() {
                 Full Name
               </label>
               <p className="text-[#112D4E] font-medium">
-                {facultyData?.name || user.name}
+                {facultyData?.name || user?.name || "N/A"}
               </p>
             </div>
             <div>
@@ -136,7 +166,7 @@ function ProfileComponent() {
                 Employee ID
               </label>
               <p className="text-[#112D4E] font-medium">
-                {facultyData?.employee_id || user.employee_id}
+                {facultyData?.employee_id || user?.employee_id || "N/A"}
               </p>
             </div>
             <div>
@@ -144,7 +174,7 @@ function ProfileComponent() {
                 Email Address
               </label>
               <p className="text-[#112D4E]">
-                {facultyData?.email || user.email}
+                {facultyData?.email || user?.email || "N/A"}
               </p>
             </div>
             <div>
@@ -185,7 +215,7 @@ function ProfileComponent() {
                 Department
               </label>
               <p className="text-[#112D4E] font-medium">
-                {facultyData?.department || user.department}
+                {facultyData?.department || user?.department || "Not specified"}
               </p>
             </div>
             <div>
@@ -314,6 +344,59 @@ function ProfileComponent() {
         </div>
       </div>
 
+      {/* Click Statistics */}
+      <div className="mt-6 bg-[#F9F7F7] border border-[#DBE2EF] rounded-lg px-6 py-4 shadow-sm">
+        <h3 className="text-xl font-semibold text-[#112D4E] mb-4 flex items-center">
+          <i className="fas fa-mouse-pointer mr-2 text-[#3F72AF]"></i>
+          Usage Statistics
+        </h3>
+
+        {clickLoading ? (
+          <div className="flex items-center justify-center h-24">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#3F72AF]"></div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-[#3F72AF] mb-1">
+                Header Clicks
+              </label>
+              <p className="text-2xl font-bold text-[#112D4E]">
+                {headerClickStats?.count || 0}
+              </p>
+              {headerClickStats?.lastClicked && (
+                <p className="text-xs text-gray-500">
+                  Last:{" "}
+                  {new Date(headerClickStats.lastClicked).toLocaleString()}
+                </p>
+              )}
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-[#3F72AF] mb-1">
+                Total Interactions
+              </label>
+              <p className="text-2xl font-bold text-[#112D4E]">
+                {clickStats?.totalClicks || 0}
+              </p>
+              <p className="text-xs text-gray-500">
+                Across {clickStats?.totalElements || 0} elements
+              </p>
+            </div>
+
+            <div className="flex flex-col justify-center">
+              <button
+                onClick={fetchClickStats}
+                className="px-4 py-2 bg-[#3F72AF] text-white rounded-lg hover:bg-[#112D4E] transition-colors text-sm"
+              >
+                <i className="fas fa-sync-alt mr-1"></i>
+                Refresh Stats
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+
       {/* Session Information */}
       <div className="mt-6 bg-[#F9F7F7] border border-[#DBE2EF] rounded-lg px-6 py-4 shadow-sm">
         <h3 className="text-xl font-semibold text-[#112D4E] mb-4">
@@ -325,7 +408,9 @@ function ProfileComponent() {
               Login Time
             </label>
             <p className="text-[#112D4E]">
-              {new Date(user.loginTime).toLocaleString()}
+              {user?.loginTime
+                ? new Date(user.loginTime).toLocaleString()
+                : "Not available"}
             </p>
           </div>
           <div>
@@ -333,7 +418,9 @@ function ProfileComponent() {
               Last Activity
             </label>
             <p className="text-[#112D4E]">
-              {new Date(user.lastActivity).toLocaleString()}
+              {user?.lastActivity
+                ? new Date(user.lastActivity).toLocaleString()
+                : "Not available"}
             </p>
           </div>
         </div>
